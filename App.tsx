@@ -17,16 +17,21 @@ function App() {
       
       {/* Navigation / Header */}
       <header className="fixed top-0 left-0 w-full z-40 px-6 py-6 flex justify-between items-center bg-gradient-to-b from-background/50 to-transparent backdrop-blur-[2px]">
-         <div className="w-32 md:w-40 flex items-center">
+         <div className="w-auto min-w-[120px] h-12 flex items-center">
            {/* Logo logic with fallback */}
            {logoError ? (
-             <span className="font-display font-bold text-xl md:text-2xl tracking-widest text-white uppercase">.STEINKE</span>
+             <span className="font-display font-bold text-xl md:text-2xl tracking-widest text-white uppercase whitespace-nowrap">
+               Estúdio Stanke
+             </span>
            ) : (
              <img 
-               src="https://fal.media/files/penguin/L5xN1c2zV3bM4qW5eR6t7.png" 
+               src="logo(1).png" 
                alt="Stanke Studio Logo" 
-               onError={() => setLogoError(true)}
-               className="w-full h-auto object-contain invert opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
+               onError={(e) => {
+                 console.warn("Header Logo failed to load", e);
+                 setLogoError(true);
+               }}
+               className="h-8 md:h-10 w-auto object-contain invert opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
              />
            )}
          </div>

@@ -6,15 +6,20 @@ const Footer: React.FC = () => {
   return (
     <footer className="py-12 border-t border-white/10 bg-black text-center">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-6">
-        <div className="w-32 opacity-80 hover:opacity-100 transition-opacity duration-300 flex justify-center">
+        <div className="w-auto h-12 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-300">
            {logoError ? (
-             <span className="font-display font-bold text-2xl tracking-widest text-white uppercase">.STEINKE</span>
+             <span className="font-display font-bold text-2xl tracking-widest text-white uppercase whitespace-nowrap">
+               Estúdio Stanke
+             </span>
            ) : (
              <img 
-               src="https://fal.media/files/penguin/L5xN1c2zV3bM4qW5eR6t7.png" 
+               src="logo(1).png" 
                alt="Stanke Studio Logo" 
-               onError={() => setLogoError(true)}
-               className="w-full h-auto invert"
+               onError={(e) => {
+                 console.warn("Footer Logo failed to load", e);
+                 setLogoError(true);
+               }}
+               className="h-8 md:h-10 w-auto object-contain invert"
              />
            )}
         </div>
