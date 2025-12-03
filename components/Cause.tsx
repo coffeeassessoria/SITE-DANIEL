@@ -1,13 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Cause: React.FC = () => {
-  return (
-    <section className="relative py-32 bg-[#080000] overflow-hidden border-y border-red-900/20">
-      {/* Background Red Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none" />
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
 
-      <div className="relative max-w-4xl mx-auto px-6 text-center">
+  // Map scroll progress to vertical movement for the background
+  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+
+  return (
+    <section ref={sectionRef} className="relative py-32 bg-[#080000] overflow-hidden border-y border-red-900/20">
+      {/* Background Red Glow with Parallax */}
+      <motion.div 
+        style={{ y }}
+        className="absolute -inset-[20%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background/80 to-background pointer-events-none opacity-60" 
+      />
+
+      <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

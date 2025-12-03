@@ -4,11 +4,11 @@ const Footer: React.FC = () => {
   const [logoError, setLogoError] = useState(false);
 
   return (
-    <footer className="py-12 border-t border-white/10 bg-black text-center">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-6">
-        <div className="w-auto h-12 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-300">
+    <footer className="py-16 border-t border-white/10 bg-black text-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-8">
+        <div className="relative group cursor-pointer inline-block">
            {logoError ? (
-             <span className="font-display font-bold text-2xl tracking-widest text-white uppercase whitespace-nowrap">
+             <span className="font-display font-bold text-2xl tracking-widest text-white uppercase whitespace-nowrap opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all duration-300">
                Estúdio Stanke
              </span>
            ) : (
@@ -19,14 +19,15 @@ const Footer: React.FC = () => {
                  console.warn("Footer Logo failed to load", e);
                  setLogoError(true);
                }}
-               className="h-8 md:h-10 w-auto object-contain invert"
+               className="h-10 md:h-12 w-auto object-contain invert opacity-60 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(255,0,0,0.6)]"
              />
            )}
         </div>
-        <p className="text-textMuted text-sm max-w-md">
+        <p className="text-textMuted text-sm max-w-md font-light tracking-wide leading-relaxed">
           Design que direciona. Criativos que posicionam. Marcas que crescem.
         </p>
-        <div className="text-xs text-textMuted/40 mt-8">
+        <div className="w-12 h-[1px] bg-white/10 my-2" />
+        <div className="text-[10px] md:text-xs text-textMuted/30 uppercase tracking-[0.2em]">
           © {new Date().getFullYear()} Todos os direitos reservados.
         </div>
       </div>
