@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import Button from './Button';
 
 const Hero: React.FC = () => {
+  // Se quiser que este botão vá direto para o checkout, altere a função onClick abaixo
+  // para: () => window.open('SEU_LINK', '_blank')
+  const handleHeroClick = () => {
+    document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
       {/* Background Ambience */}
@@ -35,7 +41,7 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          <Button onClick={() => document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' })}>
+          <Button onClick={handleHeroClick}>
             GARANTIR MINHA CREATOR BOX
           </Button>
         </motion.div>

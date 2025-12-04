@@ -20,8 +20,8 @@ function App() {
          <div className="w-auto min-w-[120px] h-12 flex items-center">
            {/* Logo logic with fallback */}
            {logoError ? (
-             <span className="font-display font-bold text-xl md:text-2xl tracking-widest text-white uppercase whitespace-nowrap">
-               Estúdio Stanke
+             <span className="font-display font-bold text-xl md:text-2xl tracking-widest text-white whitespace-nowrap">
+               .Steinke
              </span>
            ) : (
              <img 

@@ -4,6 +4,13 @@ import Button from './Button';
 import Section from './Section';
 
 const Offer: React.FC = () => {
+  // COLOQUE SEU LINK DE COMPRA AQUI (Checkout, WhatsApp, Stripe, etc)
+  const CHECKOUT_LINK = "https://wa.me/5566992046785?text=Ol%C3%A1%2C%20quero%20contratar%20o%20pacote%20CREATOR%20BOX!";
+
+  const handleBuyClick = () => {
+    window.open(CHECKOUT_LINK, '_blank');
+  };
+
   return (
     <Section id="offer" className="py-24 md:py-40">
       <div className="relative max-w-3xl mx-auto">
@@ -39,7 +46,7 @@ const Offer: React.FC = () => {
             Oferta exclusiva de fim de ano. Comece 2026 com o pé direito e uma marca visualmente impecável.
           </p>
 
-          <Button fullWidth onClick={() => alert("Redirect to checkout...")} className="text-lg">
+          <Button fullWidth onClick={handleBuyClick} className="text-lg">
             👉 Garantir meu pacote agora
           </Button>
 

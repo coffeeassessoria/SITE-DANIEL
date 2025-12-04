@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-8">
         <div className="relative group cursor-pointer inline-block">
            {logoError ? (
-             <span className="font-display font-bold text-2xl tracking-widest text-white uppercase whitespace-nowrap opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all duration-300">
-               Estúdio Stanke
+             <span className="font-display font-bold text-2xl tracking-widest text-white whitespace-nowrap opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all duration-300">
+               .Steinke
              </span>
            ) : (
              <img 

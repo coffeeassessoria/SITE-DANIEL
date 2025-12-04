@@ -222,7 +222,7 @@ const Deliverables: React.FC = () => {
         },
         { 
           id: 4, 
-          title: "Conteúdo p/ 3 Meses", 
+          title: "Conteúdo p/ 2 Meses", 
           desc: "Consistência garantida na timeline.",
           colSpan: "md:col-span-2",
           visual: (y: MotionValue<number>) => <AbstractContent parallaxY={y} />
