@@ -27,8 +27,8 @@ function App() {
              <img 
                src="logo(1).png" 
                alt="Stanke Studio Logo" 
-               onError={(e) => {
-                 console.warn("Header Logo failed to load", e);
+               onError={() => {
+                 console.warn("Header Logo failed to load");
                  setLogoError(true);
                }}
                className="h-8 md:h-10 w-auto object-contain invert opacity-90 hover:opacity-100 transition-opacity cursor-pointer"

@@ -15,11 +15,11 @@ const Footer: React.FC = () => {
              <img 
                src="logo(1).png" 
                alt="Stanke Studio Logo" 
-               onError={(e) => {
-                 console.warn("Footer Logo failed to load", e);
+               onError={() => {
+                 console.warn("Footer Logo failed to load");
                  setLogoError(true);
                }}
-               className="h-10 md:h-12 w-auto object-contain invert opacity-60 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(255,0,0,0.6)]"
+               className="h-10 md:h-12 w-auto object-contain invert opacity-50 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]"
              />
            )}
         </div>
